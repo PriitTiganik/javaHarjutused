@@ -23,43 +23,44 @@ public class Peamurdja2_ristmik3 extends Application {
         punane(foory);
         punane(foora);
 
-        int i = 0;
-        while (i < 3) {
-            tsykkel(foorv);
-            tsykkel(foorp);
-            foory.paus(6);
-            foora.paus(6);
-            tsykkel(foory);
-            tsykkel(foora);
-            foorv.paus(6);
-            foorp.paus(6);
-            i = i + 1;
-        }
+        tsykkel(foorv, 1);
+        tsykkel(foorp, 1);
+
+        tsykkel(foory, 0);
+        tsykkel(foora, 0);
+
     }
 
     public void punane(Foor foor) {
         foor.vahetaPunast();
     }
 
-    public void tsykkel(Foor foor) {
-        foor.paus(1);
-        foor.syytaKollane();
-        foor.paus(1);
-        foor.kustutaKollane();
-        foor.vahetaPunast();
-        foor.vahetaRohelist();
-        foor.paus(2);
-        foor.vahetaRohelist();
-        foor.paus(0.5);
-        foor.vahetaRohelist();
-        foor.paus(0.5);
-        foor.vahetaRohelist();
-        foor.paus(0.5);
-        foor.kustutaRoheline();
-        foor.syytaKollane();
-        foor.paus(0.5);
-        foor.syytaPunane();
-        foor.kustutaKollane();
+    public void tsykkel(Foor foor, int suund) {
+        int count = suund;
+         while (count<5) {
+             if (count !=0) {
+                 foor.vahetaPunast();
+                 foor.paus(1);
+                 foor.syytaKollane();
+                 foor.paus(1);
+                 foor.kustutaKollane();
+                 foor.vahetaPunast();
+             }
+             foor.vahetaRohelist();
+             foor.paus(2);
+             foor.vahetaRohelist();
+             foor.paus(0.5);
+             foor.vahetaRohelist();
+             foor.paus(0.5);
+             foor.vahetaRohelist();
+             foor.paus(0.5);
+             foor.kustutaRoheline();
+             foor.syytaKollane();
+             foor.paus(0.5);
+             foor.syytaPunane();
+             foor.kustutaKollane();
+
+         }
     }
 }
 
