@@ -18,8 +18,9 @@ import java.util.Scanner;
 public class Peamurdja3_laevad_maatriks {
     public static void main(String[] args) {//pswm main methodi saamiseks
 
-        int[][] laevastik = new int [2][2];
-        int[] laevastik_rida = new int[2];
+        int size = 3; //x*x size of the matrix
+
+        int[][] laevastik = new int [size][size];
 
         for(int i=0;i < laevastik.length;i++) { ///k2ib l2bi read. laevastik.length annab ridade arvu
             for (int j = 0; j < laevastik[i].length; j++){//k2ib labi veerud. laevastik[0].length annab veergude arvu reas 0
@@ -27,39 +28,28 @@ public class Peamurdja3_laevad_maatriks {
             //int random = (int) Math.round(Math.random());
             }
         }
-
-        for (int i =0; i<laevastik.length;i++){
-            System.out.println(Arrays.toString(laevastik[i]));
-        }
-
-/* yks sammhaaval vooimalus valja printida
-        for (int i = 0; i < laevastik.length; i++) {
-            for (int j = 0; j < laevastik[i].length; j++) {
-                System.out.print(laevastik[i][j] + " ");
-            }
-            System.out.print("\n");
-        }
-*/
+        print_matrix(laevastik);
         int laevad = 1;
 
         while (laevad>0) {
-            System.out.println("pommita laeva nr");
+            System.out.println("pommita laeva reas:");
             Scanner kasutaja = new Scanner(System.in);
             //kontroll, kas sisestas õigesti
+            int user_row = kasutaja.nextInt() - 1;
+            System.out.println("pommita laeva veerus:");
+            int user_col= kasutaja.nextInt() - 1;
 
-            int sisestus = kasutaja.nextInt() - 1;
 
-
-            if (laevastik[sisestus][1] == 1) {
+            if (laevastik[user_row][user_col] == 1) {
                 System.out.println("said laevale pihta");
-                laevastik[sisestus][1] = -1;
-            } else if (laevastik[sisestus][1] == -1) {
+                laevastik[user_row][user_col] = -1;
+            } else if (laevastik[user_row][user_col] == -1) {
                 System.out.println("juba pommitasid siia");
             } else {
                 System.out.println("mööda");
             }
 
-            System.out.println(Arrays.toString(laevastik));
+            print_matrix(laevastik);
 
             //Priidu lahendus
             /*
@@ -77,6 +67,22 @@ public class Peamurdja3_laevad_maatriks {
         }
     }
 
+    public static boolean print_matrix(int[][] matrix){
+        for (int i =0; i<matrix.length;i++){
+            System.out.println(Arrays.toString(matrix[i]));
+        }
+
+/* yks sammhaaval vooimalus valja printida
+        for (int i = 0; i < laevastik.length; i++) {
+            for (int j = 0; j < laevastik[i].length; j++) {
+                System.out.print(laevastik[i][j] + " ");
+            }
+            System.out.print("\n");
+        }
+*/
+
+        return true;
+    }
 
     public static boolean gameover(int[][] laevastik){
         for (int i = 0; i < laevastik.length ; i++) {
