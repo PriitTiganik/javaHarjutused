@@ -23,7 +23,10 @@ public class Peamurdja1_foor extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        Foor foor = new Foor(Foor.VASAK, primaryStage);
+
+        //Foor foor = new Foor(Foor.VASAK, primaryStage);
+        Foor foor = new Foor();
+
         // viis tsüklit
         int i=0;
 
