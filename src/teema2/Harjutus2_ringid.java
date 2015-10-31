@@ -6,4 +6,6 @@ package teema2;
  * 3. Joonista propeller (nagu propeller.png) kasutades jooni
  */
 public class Harjutus2_ringid {
+
+
 }
